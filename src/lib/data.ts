@@ -1,5 +1,19 @@
-import { Wifi, Tv, UtensilsCrossed, AirVent, ParkingCircle,Waves, Dog, Wind, Dumbbell, Wine } from 'lucide-react';
-import type { Property, Reservation } from '@/types';
+import { Wifi, Tv, UtensilsCrossed, AirVent, ParkingCircle,Waves, Dog, Wind, Dumbbell, Wine, type LucideIcon } from 'lucide-react';
+import type { Property, Reservation, Amenity } from '@/types';
+
+export const amenitiesMap: Record<string, LucideIcon> = {
+  Wifi,
+  Tv,
+  Kitchen: UtensilsCrossed,
+  'Air Conditioning': AirVent,
+  'Free Parking': ParkingCircle,
+  Pool: Waves,
+  'Pet Friendly': Dog,
+  Wind,
+  'Gym access': Dumbbell,
+  'On-site restaurant': Wine,
+  'Hot Tub': Waves,
+};
 
 export const properties: Property[] = [
   {
@@ -16,11 +30,11 @@ export const properties: Property[] = [
     baths: 2,
     description: 'Escape to this charming and secluded cabin in the heart of the Rocky Mountains. Enjoy breathtaking views, a cozy fireplace, and easy access to hiking trails and ski resorts. Perfect for a romantic getaway or a small family adventure.',
     amenities: [
-      { name: 'WiFi', icon: Wifi },
-      { name: 'Kitchen', icon: UtensilsCrossed },
-      { name: 'Free Parking', icon: ParkingCircle },
-      { name: 'Pet Friendly', icon: Dog },
-      { name: 'Air Conditioning', icon: AirVent },
+      { name: 'WiFi' },
+      { name: 'Kitchen' },
+      { name: 'Free Parking' },
+      { name: 'Pet Friendly' },
+      { name: 'Air Conditioning' },
     ],
     images: [
       'https://picsum.photos/seed/prop1img1/1200/800',
@@ -43,11 +57,11 @@ export const properties: Property[] = [
     baths: 4.5,
     description: 'Experience luxury living at its finest in this stunning beachfront villa. With panoramic ocean views, a private pool, and direct beach access, this modern home is an oasis of tranquility and style. Ideal for large groups or families seeking the ultimate coastal retreat.',
     amenities: [
-      { name: 'WiFi', icon: Wifi },
-      { name: 'TV', icon: Tv },
-      { name: 'Kitchen', icon: UtensilsCrossed },
-      { name: 'Air Conditioning', icon: AirVent },
-      { name: 'Pool', icon: Waves },
+      { name: 'WiFi' },
+      { name: 'TV' },
+      { name: 'Kitchen' },
+      { name: 'Air Conditioning' },
+      { name: 'Pool' },
     ],
     images: [
       'https://picsum.photos/seed/prop2img1/1200/800',
@@ -71,11 +85,11 @@ export const properties: Property[] = [
     baths: 1,
     description: 'Immerse yourself in the vibrant culture of Brooklyn from this stylish and spacious loft. Featuring industrial-chic design, high ceilings, and a fully equipped kitchen, it\'s the perfect base for exploring the city\'s art, music, and culinary scenes.',
     amenities: [
-      { name: 'WiFi', icon: Wifi },
-      { name: 'TV', icon: Tv },
-      { name: 'Kitchen', icon: UtensilsCrossed },
-      { name: 'Air Conditioning', icon: AirVent },
-      { name: 'Gym access', icon: Dumbbell },
+      { name: 'WiFi' },
+      { name: 'TV' },
+      { name: 'Kitchen' },
+      { name: 'Air Conditioning' },
+      { name: 'Gym access' },
     ],
     images: [
       'https://picsum.photos/seed/prop3img1/1200/800',
@@ -97,11 +111,11 @@ export const properties: Property[] = [
     baths: 1,
     description: 'A luxurious hotel room overlooking the rolling vineyards of Napa Valley. Enjoy wine tasting, gourmet dining, and a serene spa on-site. Each room features a private balcony, perfect for savoring a glass of local wine while watching the sunset.',
     amenities: [
-      { name: 'WiFi', icon: Wifi },
-      { name: 'TV', icon: Tv },
-      { name: 'Air Conditioning', icon: AirVent },
-      { name: 'Pool', icon: Waves },
-      { name: 'On-site restaurant', icon: Wine },
+      { name: 'WiFi' },
+      { name: 'TV' },
+      { name: 'Air Conditioning' },
+      { name: 'Pool' },
+      { name: 'On-site restaurant' },
     ],
     images: [
       'https://picsum.photos/seed/prop4img1/1200/800',
@@ -124,11 +138,11 @@ export const properties: Property[] = [
     baths: 3,
     description: 'Find peace and rejuvenation at this adobe-style villa set against Sedona\'s stunning red rock formations. Features a private hot tub, a stargazing deck, and access to exclusive hiking trails. An architectural gem that blends seamlessly with its natural surroundings.',
     amenities: [
-      { name: 'WiFi', icon: Wifi },
-      { name: 'Kitchen', icon: UtensilsCrossed },
-      { name: 'Air Conditioning', icon: AirVent },
-      { name: 'Hot Tub', icon: Waves },
-      { name: 'Free Parking', icon: ParkingCircle },
+      { name: 'WiFi' },
+      { name: 'Kitchen' },
+      { name: 'Air Conditioning' },
+      { name: 'Hot Tub' },
+      { name: 'Free Parking' },
     ],
     images: [
       'https://picsum.photos/seed/prop5img1/1200/800',
@@ -151,9 +165,9 @@ export const properties: Property[] = [
     baths: 1,
     description: 'Live like a local in this beautifully preserved apartment in the historic Le Marais district. Exposed wooden beams, antique furniture, and a charming courtyard provide an authentic Parisian experience. Steps away from museums, galleries, and patisseries.',
     amenities: [
-      { name: 'WiFi', icon: Wifi },
-      { name: 'TV', icon: Tv },
-      { name: 'Kitchen', icon: UtensilsCrossed },
+      { name: 'WiFi' },
+      { name: 'TV' },
+      { name: 'Kitchen' },
     ],
     images: [
       'https://picsum.photos/seed/prop6img1/1200/800',

@@ -6,17 +6,12 @@ import {
   Users,
   MapPin,
   Star,
-  Sparkles,
-  Wifi,
-  UtensilsCrossed,
-  ParkingCircle,
-  Dog,
 } from 'lucide-react';
 import { properties } from '@/lib/data';
-import { Badge } from '@/components/ui/badge';
 import BookingWidget from '@/components/property/BookingWidget';
 import AIAssistant from '@/components/property/AIAssistant';
 import VisualTourGenerator from '@/components/property/VisualTourGenerator';
+import { PropertyAmenities } from '@/components/property/PropertyAmenities';
 
 export default function PropertyDetailsPage({ params }: { params: { id: string } }) {
   const property = properties.find((p) => p.id === parseInt(params.id, 10));
@@ -81,14 +76,7 @@ export default function PropertyDetailsPage({ params }: { params: { id: string }
           {/* Amenities */}
           <div className="py-6 border-b">
             <h3 className="font-headline text-2xl mb-4">What this place offers</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {property.amenities.map((amenity) => (
-                <div key={amenity.name} className="flex items-center gap-3">
-                  <amenity.icon className="w-5 h-5 text-primary" />
-                  <span>{amenity.name}</span>
-                </div>
-              ))}
-            </div>
+            <PropertyAmenities amenities={property.amenities} />
           </div>
 
           {/* AI Assistant */}

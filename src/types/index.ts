@@ -1,6 +1,5 @@
 export interface Amenity {
   name: string;
-  icon: React.ComponentType<{ className?: string }>;
 }
 
 export interface Property {
