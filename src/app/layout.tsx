@@ -3,6 +3,7 @@ import './globals.css';
 import { Header } from '@/components/layout/Header';
 import { Toaster } from '@/components/ui/toaster';
 import { FavoritesProvider } from '@/contexts/FavoritesProvider';
+import { AuthProvider } from '@/contexts/AuthProvider';
 
 export const metadata: Metadata = {
   title: 'Voyage Planner',
@@ -23,13 +24,15 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
       </head>
       <body className="font-body bg-background text-foreground antialiased">
-        <FavoritesProvider>
-          <Header />
-          <main className="min-h-screen">
-            {children}
-          </main>
-          <Toaster />
-        </FavoritesProvider>
+        <AuthProvider>
+          <FavoritesProvider>
+            <Header />
+            <main className="min-h-screen">
+              {children}
+            </main>
+            <Toaster />
+          </FavoritesProvider>
+        </AuthProvider>
       </body>
     </html>
   );

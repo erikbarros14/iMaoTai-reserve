@@ -5,9 +5,11 @@ import {
   BriefcaseBusiness,
   Heart,
   LogIn,
+  LogOut,
   Menu,
   Plane,
   Search,
+  UserPlus,
 } from 'lucide-react';
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -25,6 +27,7 @@ import {
   SheetContent,
   SheetTrigger,
 } from '@/components/ui/sheet';
+import { useAuth } from '@/contexts/AuthProvider';
 
 const navItems = [
   { href: '/search', label: 'Search', icon: Search },
@@ -33,6 +36,8 @@ const navItems = [
 ];
 
 export function Header() {
+  const { user, logout } = useAuth();
+
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-card/80 backdrop-blur">
       <div className="container mx-auto flex h-16 items-center px-4">
@@ -54,27 +59,44 @@ export function Header() {
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" className="relative h-8 w-8 rounded-full">
                 <Avatar className="h-8 w-8">
-                  <AvatarImage src="https://i.pravatar.cc/150" alt="@shadcn" />
-                  <AvatarFallback>VP</AvatarFallback>
+                  <AvatarImage src={user?.photoURL ?? "https://i.pravatar.cc/150"} alt={user?.displayName ?? 'Guest User'} />
+                  <AvatarFallback>
+                    {user?.displayName?.charAt(0) ?? 'G'}
+                  </AvatarFallback>
                 </Avatar>
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-56" align="end" forceMount>
               <DropdownMenuLabel className="font-normal">
                 <div className="flex flex-col space-y-1">
-                  <p className="text-sm font-medium leading-none">Guest User</p>
+                  <p className="text-sm font-medium leading-none">{user?.displayName ?? 'Guest User'}</p>
                   <p className="text-xs leading-none text-muted-foreground">
-                    guest@example.com
+                    {user?.email ?? 'guest@example.com'}
                   </p>
                 </div>
               </DropdownMenuLabel>
               <DropdownMenuSeparator />
-              <DropdownMenuItem asChild>
-                 <Link href="/login">
-                  <LogIn className="mr-2 h-4 w-4" />
-                  <span>Log In</span>
-                </Link>
-              </DropdownMenuItem>
+              {user ? (
+                <DropdownMenuItem onClick={logout}>
+                  <LogOut className="mr-2 h-4 w-4" />
+                  <span>Log Out</span>
+                </DropdownMenuItem>
+              ) : (
+                <>
+                  <DropdownMenuItem asChild>
+                    <Link href="/login">
+                      <LogIn className="mr-2 h-4 w-4" />
+                      <span>Log In</span>
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/signup">
+                      <UserPlus className="mr-2 h-4 w-4" />
+                      <span>Sign Up</span>
+                    </Link>
+                  </DropdownMenuItem>
+                </>
+              )}
             </DropdownMenuContent>
           </DropdownMenu>
 
