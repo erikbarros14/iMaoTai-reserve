@@ -7,7 +7,7 @@ type FavoritesContextType = {
   toggleFavorite: (id: number) => void;
   isFavorite: (id: number) => boolean;
 };
-
+  // Create a context
 const FavoritesContext = createContext<FavoritesContextType | undefined>(undefined);
 
 const LOCAL_STORAGE_KEY = 'voyage-planner-favorites';
