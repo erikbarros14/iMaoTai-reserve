@@ -1,0 +1,187 @@
+import { Wifi, Tv, UtensilsCrossed, AirVent, ParkingCircle,Waves, Dog, Wind, Dumbbell, Wine } from 'lucide-react';
+import type { Property, Reservation } from '@/types';
+
+export const properties: Property[] = [
+  {
+    id: 1,
+    name: 'Serene Mountain Cabin',
+    location: 'Aspen, Colorado',
+    pricePerNight: 350,
+    rating: 4.9,
+    reviews: 128,
+    type: 'Cabin',
+    guests: 4,
+    bedrooms: 2,
+    beds: 2,
+    baths: 2,
+    description: 'Escape to this charming and secluded cabin in the heart of the Rocky Mountains. Enjoy breathtaking views, a cozy fireplace, and easy access to hiking trails and ski resorts. Perfect for a romantic getaway or a small family adventure.',
+    amenities: [
+      { name: 'WiFi', icon: Wifi },
+      { name: 'Kitchen', icon: UtensilsCrossed },
+      { name: 'Free Parking', icon: ParkingCircle },
+      { name: 'Pet Friendly', icon: Dog },
+      { name: 'Air Conditioning', icon: AirVent },
+    ],
+    images: [
+      'https://picsum.photos/seed/prop1img1/1200/800',
+      'https://picsum.photos/seed/prop1img2/1200/800',
+      'https://picsum.photos/seed/prop1img3/1200/800',
+      'https://picsum.photos/seed/prop1img4/1200/800'
+    ]
+  },
+  {
+    id: 2,
+    name: 'Modern Beachfront Villa',
+    location: 'Malibu, California',
+    pricePerNight: 800,
+    rating: 4.95,
+    reviews: 215,
+    type: 'Villa',
+    guests: 8,
+    bedrooms: 4,
+    beds: 5,
+    baths: 4.5,
+    description: 'Experience luxury living at its finest in this stunning beachfront villa. With panoramic ocean views, a private pool, and direct beach access, this modern home is an oasis of tranquility and style. Ideal for large groups or families seeking the ultimate coastal retreat.',
+    amenities: [
+      { name: 'WiFi', icon: Wifi },
+      { name: 'TV', icon: Tv },
+      { name: 'Kitchen', icon: UtensilsCrossed },
+      { name: 'Air Conditioning', icon: AirVent },
+      { name: 'Pool', icon: Waves },
+    ],
+    images: [
+      'https://picsum.photos/seed/prop2img1/1200/800',
+      'https://picsum.photos/seed/prop2img2/1200/800',
+      'https://picsum.photos/seed/prop2img3/1200/800',
+      'https://picsum.photos/seed/prop2img4/1200/800',
+      'https://picsum.photos/seed/prop2img5/1200/800',
+    ]
+  },
+  {
+    id: 3,
+    name: 'Chic Urban Loft',
+    location: 'Brooklyn, New York',
+    pricePerNight: 275,
+    rating: 4.8,
+    reviews: 350,
+    type: 'Apartment',
+    guests: 2,
+    bedrooms: 1,
+    beds: 1,
+    baths: 1,
+    description: 'Immerse yourself in the vibrant culture of Brooklyn from this stylish and spacious loft. Featuring industrial-chic design, high ceilings, and a fully equipped kitchen, it\'s the perfect base for exploring the city\'s art, music, and culinary scenes.',
+    amenities: [
+      { name: 'WiFi', icon: Wifi },
+      { name: 'TV', icon: Tv },
+      { name: 'Kitchen', icon: UtensilsCrossed },
+      { name: 'Air Conditioning', icon: AirVent },
+      { name: 'Gym access', icon: Dumbbell },
+    ],
+    images: [
+      'https://picsum.photos/seed/prop3img1/1200/800',
+      'https://picsum.photos/seed/prop3img2/1200/800',
+      'https://picsum.photos/seed/prop3img3/1200/800',
+    ]
+  },
+  {
+    id: 4,
+    name: 'Vineyard View Hotel',
+    location: 'Napa Valley, California',
+    pricePerNight: 450,
+    rating: 4.88,
+    reviews: 412,
+    type: 'Hotel',
+    guests: 2,
+    bedrooms: 1,
+    beds: 1,
+    baths: 1,
+    description: 'A luxurious hotel room overlooking the rolling vineyards of Napa Valley. Enjoy wine tasting, gourmet dining, and a serene spa on-site. Each room features a private balcony, perfect for savoring a glass of local wine while watching the sunset.',
+    amenities: [
+      { name: 'WiFi', icon: Wifi },
+      { name: 'TV', icon: Tv },
+      { name: 'Air Conditioning', icon: AirVent },
+      { name: 'Pool', icon: Waves },
+      { name: 'On-site restaurant', icon: Wine },
+    ],
+    images: [
+      'https://picsum.photos/seed/prop4img1/1200/800',
+      'https://picsum.photos/seed/prop4img2/1200/800',
+      'https://picsum.photos/seed/prop4img3/1200/800',
+      'https://picsum.photos/seed/prop4img4/1200/800',
+    ]
+  },
+  {
+    id: 5,
+    name: 'Desert Oasis Retreat',
+    location: 'Sedona, Arizona',
+    pricePerNight: 550,
+    rating: 4.9,
+    reviews: 189,
+    type: 'Villa',
+    guests: 6,
+    bedrooms: 3,
+    beds: 3,
+    baths: 3,
+    description: 'Find peace and rejuvenation at this adobe-style villa set against Sedona\'s stunning red rock formations. Features a private hot tub, a stargazing deck, and access to exclusive hiking trails. An architectural gem that blends seamlessly with its natural surroundings.',
+    amenities: [
+      { name: 'WiFi', icon: Wifi },
+      { name: 'Kitchen', icon: UtensilsCrossed },
+      { name: 'Air Conditioning', icon: AirVent },
+      { name: 'Hot Tub', icon: Waves },
+      { name: 'Free Parking', icon: ParkingCircle },
+    ],
+    images: [
+      'https://picsum.photos/seed/prop5img1/1200/800',
+      'https://picsum.photos/seed/prop5img2/1200/800',
+      'https://picsum.photos/seed/prop5img3/1200/800',
+      'https://picsum.photos/seed/prop5img4/1200/800',
+    ]
+  },
+  {
+    id: 6,
+    name: 'Historic Parisian Flat',
+    location: 'Le Marais, Paris',
+    pricePerNight: 320,
+    rating: 4.85,
+    reviews: 450,
+    type: 'Apartment',
+    guests: 3,
+    bedrooms: 1,
+    beds: 2,
+    baths: 1,
+    description: 'Live like a local in this beautifully preserved apartment in the historic Le Marais district. Exposed wooden beams, antique furniture, and a charming courtyard provide an authentic Parisian experience. Steps away from museums, galleries, and patisseries.',
+    amenities: [
+      { name: 'WiFi', icon: Wifi },
+      { name: 'TV', icon: Tv },
+      { name: 'Kitchen', icon: UtensilsCrossed },
+    ],
+    images: [
+      'https://picsum.photos/seed/prop6img1/1200/800',
+      'https://picsum.photos/seed/prop6img2/1200/800',
+      'https://picsum.photos/seed/prop6img3/1200/800',
+    ]
+  },
+];
+
+export const reservations: Reservation[] = [
+  {
+    id: 'res1',
+    propertyId: 2,
+    propertyName: 'Modern Beachfront Villa',
+    propertyImage: 'https://picsum.photos/seed/prop2img1/400/300',
+    location: 'Malibu, California',
+    checkIn: new Date('2024-09-10'),
+    checkOut: new Date('2024-09-15'),
+    totalCost: 4000,
+  },
+  {
+    id: 'res2',
+    propertyId: 5,
+    propertyName: 'Desert Oasis Retreat',
+    propertyImage: 'https://picsum.photos/seed/prop5img1/400/300',
+    location: 'Sedona, Arizona',
+    checkIn: new Date('2024-10-20'),
+    checkOut: new Date('2024-10-25'),
+    totalCost: 2750,
+  }
+];
