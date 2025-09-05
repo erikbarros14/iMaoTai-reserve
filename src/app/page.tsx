@@ -13,14 +13,14 @@ export default function Home() {
     <div className="flex flex-col">
       <section className="relative h-[60vh] min-h-[400px] w-full">
         <Image
-          src="https://picsum.photos/1920/1080"
+          src="https://picsum.photos/seed/teafield/1920/1080"
           alt="A beautiful travel destination"
-          data-ai-hint="beautiful landscape"
+          data-ai-hint="tea plantation"
           fill
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/30" />
         <div className="relative z-10 flex h-full flex-col items-center justify-center text-center text-white p-4">
           <h1 className="font-headline text-5xl md:text-7xl font-bold tracking-tight drop-shadow-md">
             Find Your Next Voyage
